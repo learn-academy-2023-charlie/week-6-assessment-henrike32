@@ -73,13 +73,28 @@ describe("onlyRemainders", () => {
 // Input - array of objects with 2 key:value pairs
 // Output - array with a sentence about each person with their name capitalized
 // Process:
+// define a function named 'onlyRemainders'
+// create a variable named 'newArray' with an empty array
+// iterate through the function using a for loop
+// use a conditional statement with the typeof method to separate the numbers in the array
+// then push the product of the array integers by index divided by the modulo of 3 into the new array
 // 
-// 
-// 
+function onlyRemainders(arr){
+  let newArray = [];
+  for(let i =0; i < arr.length; i++){
+    if (typeof arr[i] === 'number') {
+      newArray.push(arr[i] % 3);
+    }
+  }
+  return newArray;
+}
 // 
 // ReferenceError: onlyRemainders is not defined
 // Expected output: [ 2, 0, -1, 0 ]
 // Expected output: [ 2, 1, -1 ]
+// onlyRemainders
+// ✓ returns an array of only the REMAINDERS of the numbers when divided by 3 (1 ms)
+// 
 // 
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
 // 
