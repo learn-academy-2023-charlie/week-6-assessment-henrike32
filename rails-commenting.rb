@@ -56,7 +56,7 @@ class BlogPostsController < ApplicationController
   # ---9)The keyword 'private' in Ruby restricts access to methods. The methods defined below this keyword can only be called from within the current object. Extra security, everything below private only available on the scope of this controller
   private
   def blog_post_params
-    # ---10)The 'blog_post_params' method is a private method that uses Rails's strong parameters feature. This is a security practice to prevent mass assignment vulnerabilities. It permits only the ':title' and ':content' fields from the parameters for creating or updating a 'BlogPost'
+    # ---10)Strong parameters feature. This is a security practice to prevent mass assignment vulnerabilities. It permits only the ':title' and ':content' fields from the parameters for creating or updating a 'BlogPost'
     params.require(:blog_post).permit(:title, :content)
   end
 end
