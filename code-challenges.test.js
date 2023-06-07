@@ -88,6 +88,12 @@ function onlyRemainders(arr){
   }
   return newArray;
 }
+
+
+// Justin Refactor :   
+const remainder = (array) => {
+  return array.filter(element => typeof element === 'number').map(number => % 3)
+}
 // 
 // ReferenceError: onlyRemainders is not defined
 // Expected output: [ 2, 0, -1, 0 ]
@@ -122,9 +128,15 @@ describe("theCuber", () => {
 //  return the sum of all the numbers from the array after being cubed.
 const theCuber = (arr) => {
   const cubed = arr.map((num) => num ** 3)
-  const sum = cubed.reduce((a, b)=> a + b , 0);
-  return sum
+  return cubed.reduce((a, b)=> a + b , 0);
 };
+
+// Jessica refactor:
+const sumFunction = (arr) =>{
+  return array.map( value => value ** 3 ).reduce((acc, cur) => acc + curr, 0)
+}
+
+
 // 
 // ReferenceError: theCuber is not defined
 // Expected output: 99
