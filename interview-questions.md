@@ -29,19 +29,28 @@ Researched answer: 'rails generate migration MigrationName: This command generat
 
 4. Consider the Rails routes below. What is the name of the controller method that would be called by each route? What action would each of the controller methods perform?
 
-action: "GET" location: /students = StudentsController method: Index , used to display a list of all students.
+action: "GET" location: /students = StudentsController method: 
+Index , used to display a list of all students.
 
-action: "POST" location: /students = StudentsController method: Create , to handle the creation of a new student record.
+action: "GET" location: /students/new = StudentsController method: 
+New , to display a form for create a new student.
 
-action: "GET" location: /students/new = StudentsController method: New , to display a form for create a new student.
+action: "GET" location: /students/2 = StudentsController method: 
+Show , used to display a specific student in the db, in this case the student with an ID 2 in the db.
 
-action: "GET" location: /students/2 = StudentsController method: Show , used to display a specific student in the db, in this case the student with an ID 2 in the db.
+action: "GET" location: /students/2/edit = StudentsController method: 
+Edit , used to display a form for editing an existing student, in this example the student with an ID of 2.
 
-action: "GET" location: /students/2/edit = StudentsController method: Edit , used to display a form for editing an existing student, in this example the student with an ID of 2.
+action: "POST" location: /students = StudentsController method: 
+Create , to handle the creation of a new student record.
 
-action: "PATCH" location: /students/2 StudentsController method: Update , used to alter information on a specific student, in this case the student of ID 2, typically after a form submission.
+ALSO YOU HAVE THE "POST" UPDATE/MODIFY
 
-action: "DELETE" location: /students/2 StudentsController method: Destroy/Delete , used to handle the deletion of a student record, in this case the student with an ID of 2.
+action: "PATCH" location: /students/2 StudentsController method: 
+Update , used to alter information on a specific student, in this case the student of ID 2, typically after a form submission.
+
+action: "DELETE" location: /students/2 StudentsController method: 
+Destroy/Delete , used to handle the deletion of a student record, in this case the student with an ID of 2.
 
 5. As a developer, you are making an application to manage your to do list. Create 10 user stories that will help you get your application started. [Here is a resource](https://www.atlassian.com/agile/project-management/user-stories) to help you create your user stories.
 
