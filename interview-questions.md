@@ -16,7 +16,7 @@ to generate a migration file that will have a method called 'change' that will a
 
 2. Which RESTful routes must always be passed params? Why?
 
-Your answer: I would say GET will always have params because you need them to pull all the info you have in your database.
+Your answer: 
 
 Researched answer: POST, PUT or PATCH, the reason is that whenever they involve in creating/modifying resources they require params to be passed to work correctly. The server needs to receive the necessary data through params, allowing it to make the appropriate modifications or create the resources with the provided information.
 
