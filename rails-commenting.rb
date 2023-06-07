@@ -18,13 +18,13 @@ class BlogPostsController < ApplicationController
     @post = BlogPost.find(params[:id])
   end
 
-  # ---4) The 'new' action/method creates a new 'BlogPost' instance and assigns it to the '@post' instance variable. It allows the user to input data that will be used to create an instance to the db.
+  # ---4) The 'new' action/method creates a new 'BlogPost' instance and assigns it to the '@post' instance variable. It allows the user to input data that will be used to create an instance to the db. Method to display from for user ( to create  a new post )
   def new
     @post = BlogPost.new
   end
 
   def create
-    # ---5) The 'create' action/method attempts to create a new 'BlogPost' instance using the parameters from the 'blog_post_params'. If the post is successfully created and passes validation('.valid?'), the user is redirected to the 'show' view for this blog post.
+    # ---5) The 'create' action/method attempts to create a new 'BlogPost' instance using the parameters from the 'blog_post_params'. If the post is successfully created and passes validation('.valid?'), the user is redirected to the 'show' view for this blog post. Instance variable, create new blog post based on strong params.
     @post = BlogPost.create(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
@@ -32,13 +32,13 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
-    # ---6) The 'edit' action/method fetches/pull a specific 'BlogPost' record based on the 'id' parameter passed in the URL and assigns it to the '@post' instance variable. This '@post' is typically used in the 'edit' view to build a form for editing the blog post.
+    # ---6) The 'edit' action/method fetches/pull a specific 'BlogPost' record based on the 'id' parameter passed in the URL and assigns it to the '@post' instance variable. This '@post' is typically used in the 'edit' view to build a form for editing the blog post. Locate blog post with the id that matches params id passed.
     @post = BlogPost.find(params[:id])
   end
 
   def update
     @post = BlogPost.find(params[:id])
-    # ---7)The 'update' action fetches a specific 'BlogPost' record and tries to update it with the parameters from the form submission. If the post is sucessfully updated and passes validation, the user is redirected to the 'show' view for this blog post.
+    # ---7)The 'update' action fetches a specific 'BlogPost' record and tries to update it with the parameters from the form submission. If the post is sucessfully updated and passes validation, the user is redirected to the 'show' view for this blog post. Actually updates database based on strong params.
     @post.update(blog_post_params)
     if @post.valid?
       redirect_to blog_post_path(@post)
@@ -53,7 +53,7 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # ---9)The keyword 'private' in Ruby restricts access to methods. The methods defined below this keyword can only be called from within the current object.
+  # ---9)The keyword 'private' in Ruby restricts access to methods. The methods defined below this keyword can only be called from within the current object. Extra security, everything below private only available on the scope of this controller
   private
   def blog_post_params
     # ---10)The 'blog_post_params' method is a private method that uses Rails's strong parameters feature. This is a security practice to prevent mass assignment vulnerabilities. It permits only the ':title' and ':content' fields from the parameters for creating or updating a 'BlogPost'
